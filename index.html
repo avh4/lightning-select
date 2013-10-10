@@ -6,21 +6,18 @@
   body {background-color: #0073ef; text-align: center}
   #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
 
-  .dim {opacity: 0.3}
-  .sel {color: red}
-
   .s {position: absolute; width: 30px; height: 30px; }
-  img.boss1, .s.boss1 {position: absolute; top: 33px; left: 49px;}
-  img.boss2 {position: absolute; top: 33px; left: 113px;}
-  img.boss3 {position: absolute; top: 33px; left: 176px;}
-  img.boss4 {position: absolute; top: 97px; left: 49px;}
-  img.logo  {position: absolute; top: 97px; left: 113px;}
-  img.boss5 {position: absolute; top: 97px; left: 176px;}
-  img.boss6 {position: absolute; top: 161px; left: 49px;}
-  img.boss7 {position: absolute; top: 161px; left: 113px;}
-  img.boss8 {position: absolute; top: 161px; left: 176px;}
+  .s.boss1 {top: 33px; left: 49px;}
+  .s.boss2 {top: 33px; left: 113px;}
+  .s.boss3 {top: 33px; left: 176px;}
+  .s.boss4 {top: 97px; left: 49px;}
+  .s.logo  {top: 97px; left: 113px;}
+  .s.boss5 {top: 97px; left: 176px;}
+  .s.boss6 {top: 161px; left: 49px;}
+  .s.boss7 {top: 161px; left: 113px;}
+  .s.boss8 {top: 161px; left: 176px;}
 
-  pre {color: white; font-family: 'Conv_megaman_2'; font-size: 8px; text-align: left}
+  .t {color: white; font-family: 'Conv_megaman_2'; font-size: 8px; text-align: left}
   pre.boss1 {position: absolute; top: 64px; left: 35px;}
   pre.boss2 {position: absolute; top: 64px; left: 100px;}
   pre.boss3 {position: absolute; top: 64px; left: 163px;}
@@ -30,6 +27,10 @@
   pre.boss6 {position: absolute; top: 192px; left: 35px;}
   pre.boss7 {position: absolute; top: 192px; left: 100px;}
   pre.boss8 {position: absolute; top: 192px; left: 163px;}
+
+  .dim {opacity: 0.3}
+  .sel {color: red}
+
   </style>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script>
@@ -86,24 +87,24 @@
 <body>
   <div id="select">
   <img id="ref" src="img/background.png" />
-  <img src="img/ken.png" class="boss1" />
-  <pre class="boss1">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss2" />
-  <pre class="boss2">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss3" />
-  <pre class="boss3">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss4" />
-  <pre class="boss4">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss5" />
-  <pre class="boss5">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss6" />
-  <pre class="boss6">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss7" />
-  <pre class="boss7">Speaker <br/>           Man</pre>
-  <img src="img/ken.png" class="boss8" />
-  <pre class="boss8">Speaker <br/>           Man</pre>
-  <img src="img/pivotal.png" class="logo" />
-  <pre class="logo">Speaker <br/>           Man</pre>
+  <img class="s boss1" src="img/ken.png" />
+  <pre class="t boss1">Speaker <br/>           Man</pre>
+  <img class="s boss2" src="img/ken.png" />
+  <pre class="t boss2">Speaker <br/>           Man</pre>
+  <img class="s boss3" src="img/ken.png" />
+  <pre class="t boss3">Speaker <br/>           Man</pre>
+  <img class="s boss4" src="img/ken.png" />
+  <pre class="t boss4">Speaker <br/>           Man</pre>
+  <img class="s boss5" src="img/ken.png" />
+  <pre class="t boss5">Speaker <br/>           Man</pre>
+  <img class="s boss6" src="img/ken.png" />
+  <pre class="t boss6">Speaker <br/>           Man</pre>
+  <img class="s boss7" src="img/ken.png" />
+  <pre class="t boss7">Speaker <br/>           Man</pre>
+  <img class="s boss8" src="img/ken.png" />
+  <pre class="t boss8">Speaker <br/>           Man</pre>
+  <img class="s logo" src="img/pivotal.png"/>
+  <pre class="t logo">Speaker <br/>           Man</pre>
   </div>
 </body>
 </html>
