@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
   <style>
   body {background-color: #0073ef; text-align: center}
   #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
-  .boss1 {position: absolute; top: 33px; left: 48px;}
-  .boss2 {position: absolute; top: 33px; left: 113px;}
-  .boss3 {position: absolute; top: 33px; left: 176px;}
-  .boss4 {position: absolute; top: 97px; left: 48px;}
-  .logo  {position: absolute; top: 97px; left: 113px;}
-  .boss5 {position: absolute; top: 97px; left: 176px;}
-  .boss6 {position: absolute; top: 161px; left: 48px;}
-  .boss7 {position: absolute; top: 161px; left: 113px;}
-  .boss8 {position: absolute; top: 161px; left: 176px;}
+  img.boss1 {position: absolute; top: 33px; left: 48px;}
+  img.boss2 {position: absolute; top: 33px; left: 113px;}
+  img.boss3 {position: absolute; top: 33px; left: 176px;}
+  img.boss4 {position: absolute; top: 97px; left: 48px;}
+  img.logo  {position: absolute; top: 97px; left: 113px;}
+  img.boss5 {position: absolute; top: 97px; left: 176px;}
+  img.boss6 {position: absolute; top: 161px; left: 48px;}
+  img.boss7 {position: absolute; top: 161px; left: 113px;}
+  img.boss8 {position: absolute; top: 161px; left: 176px;}
+
+  pre {color: white; font-family: 'Conv_megaman_2'; font-size: 8px; text-align: left}
+  pre.boss1 {position: absolute; top: 64px; left: 100px;}
   </style>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script>
@@ -34,6 +38,7 @@
   <div id="select">
   <img id="ref" src="img/background.png" />
   <img src="img/ken.png" class="boss1" />
+  <pre class="boss1">Speaker <br/>           Man</pre>
   <img src="img/ken.png" class="boss2" />
   <img src="img/ken.png" class="boss3" />
   <img src="img/ken.png" class="boss4" />
