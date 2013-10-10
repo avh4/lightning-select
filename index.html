@@ -7,6 +7,7 @@
   #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
 
   .dim {opacity: 0.3}
+  .sel {color: red}
 
   .s {position: absolute; width: 30px; height: 30px; }
   img.boss1, .s.boss1 {position: absolute; top: 33px; left: 49px;}
@@ -49,6 +50,15 @@
     };
   }
 
+  function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function getRandom(ary) {
+    var i = getRandomInt(0, ary.length - 1);
+    return ary[i];
+  }
+
   $(document).ready(function () {
     $("#ref").load(zoomit);
 
@@ -56,6 +66,19 @@
       var cl = ".boss" + i;
       $(cl).click(dimmer(cl));
     }
+
+    $(".logo").click(function() {
+      $(".sel").removeClass("sel");
+      var available = [];
+      for (var i = 1; i <= 8; i++) {
+        var cl = ".boss" + i;
+        if (!$(cl).hasClass("dim")) {
+          available.push(cl);
+        }
+      }
+      var next = getRandom(available);
+      $(next).addClass("sel");
+    });
   });
   $(window).resize(zoomit);
   </script>
@@ -63,8 +86,8 @@
 <body>
   <div id="select">
   <img id="ref" src="img/background.png" />
-  <img src="img/ken.png" class="boss1 dim" />
-  <pre class="boss1 dim">Speaker <br/>           Man</pre>
+  <img src="img/ken.png" class="boss1" />
+  <pre class="boss1">Speaker <br/>           Man</pre>
   <img src="img/ken.png" class="boss2" />
   <pre class="boss2">Speaker <br/>           Man</pre>
   <img src="img/ken.png" class="boss3" />
