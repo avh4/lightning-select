@@ -2,25 +2,46 @@
 <html>
 <head>
   <style>
-  body {background-color: #0073ef}
+  body {background-color: #0073ef; text-align: center}
+  #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
+  .boss1 {position: absolute; top: 33px; left: 48px;}
+  .boss2 {position: absolute; top: 33px; left: 113px;}
+  .boss3 {position: absolute; top: 33px; left: 176px;}
+  .boss4 {position: absolute; top: 97px; left: 48px;}
+  .logo  {position: absolute; top: 97px; left: 113px;}
+  .boss5 {position: absolute; top: 97px; left: 176px;}
+  .boss6 {position: absolute; top: 161px; left: 48px;}
+  .boss7 {position: absolute; top: 161px; left: 113px;}
+  .boss8 {position: absolute; top: 161px; left: 176px;}
   </style>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script>
   function zoomit() {
-    var widthScale = $(window).width() / $("#select").width();
-    var heightScale = $(window).height() / $("#select").height()
+    var widthScale = $(window).width() / $("#ref").width();
+    var heightScale = $(window).height() / $("#ref").height()
     var scale = Math.min(widthScale, heightScale)
     $("#select").css('zoom', scale);
   }
 
   $(document).ready(function () {
-    $("#select").load(zoomit);
+    $("#ref").load(zoomit);
   });
   $(window).resize(zoomit);
   
   </script>
 </head>
-<body style="text-align: center">
-  <img id="select" src="img/background.png" style="margin-left:auto; margin-right:auto"/>
+<body>
+  <div id="select">
+  <img id="ref" src="img/background.png" />
+  <img src="img/ken.png" class="boss1" />
+  <img src="img/ken.png" class="boss2" />
+  <img src="img/ken.png" class="boss3" />
+  <img src="img/ken.png" class="boss4" />
+  <img src="img/ken.png" class="boss5" />
+  <img src="img/ken.png" class="boss6" />
+  <img src="img/ken.png" class="boss7" />
+  <img src="img/ken.png" class="boss8" />
+  <img src="img/pivotal.png" class="logo" />
+  </div>
 </body>
 </html>
