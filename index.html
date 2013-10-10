@@ -5,13 +5,17 @@
   <style>
   body {background-color: #0073ef; text-align: center}
   #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
-  img.boss1 {position: absolute; top: 33px; left: 48px;}
+
+  .dim {opacity: 0.3}
+
+  .s {position: absolute; width: 30px; height: 30px; }
+  img.boss1, .s.boss1 {position: absolute; top: 33px; left: 49px;}
   img.boss2 {position: absolute; top: 33px; left: 113px;}
   img.boss3 {position: absolute; top: 33px; left: 176px;}
-  img.boss4 {position: absolute; top: 97px; left: 48px;}
+  img.boss4 {position: absolute; top: 97px; left: 49px;}
   img.logo  {position: absolute; top: 97px; left: 113px;}
   img.boss5 {position: absolute; top: 97px; left: 176px;}
-  img.boss6 {position: absolute; top: 161px; left: 48px;}
+  img.boss6 {position: absolute; top: 161px; left: 49px;}
   img.boss7 {position: absolute; top: 161px; left: 113px;}
   img.boss8 {position: absolute; top: 161px; left: 176px;}
 
@@ -45,8 +49,8 @@
 <body>
   <div id="select">
   <img id="ref" src="img/background.png" />
-  <img src="img/ken.png" class="boss1" />
-  <pre class="boss1">Speaker <br/>           Man</pre>
+  <img src="img/ken.png" class="boss1 dim" />
+  <pre class="boss1 dim">Speaker <br/>           Man</pre>
   <img src="img/ken.png" class="boss2" />
   <pre class="boss2">Speaker <br/>           Man</pre>
   <img src="img/ken.png" class="boss3" />
