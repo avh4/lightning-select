@@ -39,11 +39,25 @@
     $("#select").css('zoom', scale);
   }
 
+  function dimmer(cl) {
+    return function (o) {
+      if ($(o.target).hasClass("dim")) {
+        $(cl).removeClass("dim");
+      } else {
+        $(cl).addClass("dim");
+      }
+    };
+  }
+
   $(document).ready(function () {
     $("#ref").load(zoomit);
+
+    for (var i = 1; i <= 8; i++) {
+      var cl = ".boss" + i;
+      $(cl).click(dimmer(cl));
+    }
   });
   $(window).resize(zoomit);
-  
   </script>
 </head>
 <body>
