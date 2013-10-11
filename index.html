@@ -3,11 +3,36 @@
 <head>
   <link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
   <style>
+  @-webkit-keyframes blinker { from {opacity:1.0;} to {opacity:0.0;} }
+          @keyframes blinker { from {opacity:1.0;} to {opacity:0.0;} }
+
   body {background-color: #0073ef; text-align: center}
   #select {margin-left:auto; margin-right:auto; position:relative; width: 256px; height: 240px;}
   #ref {width: 256px; height: 240px;}
 
-  .s {position: absolute; width: 30px; height: 30px; }
+  .blink {text-decoration:blink;
+
+    -webkit-animation-name:blinker;
+            animation-name:blinker;
+    -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+    -webkit-animation-timing-function:cubic-bezier(1.0,0,0,1.0);
+            animation-timing-function:cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration:0.4s;
+            animation-duration:0.4s;}
+
+  .sl {position: absolute; width: 45px; height: 45px; pointer-events: none;}
+  .sl.boss1 {top: 26px; left: 42px;}
+  .sl.boss2 {top: 26px; left: 106px;}
+  .sl.boss3 {top: 26px; left: 170px;}
+  .sl.boss4 {top: 90px; left: 42px;}
+  .sl.logo  {top: 90px; left: 106px;}
+  .sl.boss5 {top: 90px; left: 170px;}
+  .sl.boss6 {top: 154px; left: 42px;}
+  .sl.boss7 {top: 154px; left: 106px;}
+  .sl.boss8 {top: 154px; left: 170px;}
+
+  .s {position: absolute; width: 30px; height: 30px;}
   .s.boss1 {top: 33px; left: 49px;}
   .s.boss2 {top: 33px; left: 113px;}
   .s.boss3 {top: 33px; left: 177px;}
@@ -23,7 +48,7 @@
   pre.boss2 {position: absolute; top: 64px; left: 100px;}
   pre.boss3 {position: absolute; top: 64px; left: 163px;}
   pre.boss4 {position: absolute; top: 128px; left: 35px;}
-  pre.logo  {position: absolute; top: 128px; left: 100px;}
+  pre.logo  {position: absolute; top: 128px; left: 95px;}
   pre.boss5 {position: absolute; top: 128px; left: 163px;}
   pre.boss6 {position: absolute; top: 192px; left: 35px;}
   pre.boss7 {position: absolute; top: 192px; left: 100px;}
@@ -70,6 +95,7 @@
     }
 
     $(".logo").click(function() {
+      $(".sl").removeClass("boss1 boss2 boss3 boss4 boss5 boss6 boss7 boss8 logo");
       $(".sel").removeClass("sel");
       var available = [];
       for (var i = 1; i <= 8; i++) {
@@ -79,8 +105,11 @@
         }
       }
       var next = getRandom(available);
+      if (!next) next = ".logo";
       $(next).addClass("sel");
+      $(".sl").addClass(next.substring(1));
     });
+    $(".sl").off("click");
   });
   $(window).resize(zoomit);
   </script>
@@ -105,7 +134,9 @@
   <img class="s boss8" src="img/ken.png" />
   <pre class="t boss8">Speaker <br/>           Man</pre>
   <img class="s logo" src="img/pivotal.png"/>
-  <pre class="t logo">Speaker <br/>           Man</pre>
+  <pre class="t logo">Lightning <br/>         Talks</pre>
+
+  <img class="sl logo blink" src="img/selection.png"/>
   </div>
 </body>
 </html>
