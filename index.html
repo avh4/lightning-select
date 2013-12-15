@@ -85,6 +85,47 @@
     var i = getRandomInt(0, ary.length - 1);
     return ary[i];
   }
+  
+  function findLast(ary, what) {
+	  for (var i = ary.length - 1; i >= 0; i--) {
+		  if (ary[i] == what) return i;
+	  }
+	  return -1;
+  }
+  
+  function switchTo(which) {
+      $(".sl").removeClass("boss1 boss2 boss3 boss4 boss5 boss6 boss7 boss8 logo");
+      $(".sl").addClass(which.substring(1));
+  }
+  
+  function highlight(which) {
+	  switchTo(which);
+      $(which).addClass("sel");
+  }
+  
+  function doSequence(sequence) {
+	  var next = sequence[0];
+	  var rest = sequence.slice(1);
+	  if (rest.length > 0) {
+		  switchTo(next);
+		  setTimeout(function() { doSequence(rest)}, 250);
+	  } else {
+		  highlight(next);
+	  }
+  }
+  
+  function animateTo(which) {
+	  var sequence = [
+	   	".boss1", ".boss2", ".boss3", ".boss5", ".boss8", ".boss7", ".boss6", ".boss4",
+	  	".boss1", ".boss2", ".boss3", ".boss5", ".boss8", ".boss7", ".boss6", ".boss4",
+	  	".boss1", ".boss2", ".boss3", ".boss5", ".boss8", ".boss7", ".boss6", ".boss4"];
+	  var stop = findLast(sequence, which);
+	  if (stop == -1) {
+		  console.log("Didn't find " + which + " in " + sequence);
+		  return;
+	  }
+	  doSequence(sequence.slice(0, stop+1));
+  }
 
   $(document).ready(function () {
     $("#ref").load(zoomit);
@@ -95,7 +136,6 @@
     }
 
     $(".logo").click(function() {
-      $(".sl").removeClass("boss1 boss2 boss3 boss4 boss5 boss6 boss7 boss8 logo");
       $(".sel").removeClass("sel");
       var available = [];
       for (var i = 1; i <= 8; i++) {
@@ -105,9 +145,8 @@
         }
       }
       var next = getRandom(available);
-      if (!next) next = ".logo";
-      $(next).addClass("sel");
-      $(".sl").addClass(next.substring(1));
+      if (!next) switchTo(".logo");
+	  else animateTo(next);
     });
     $(".sl").off("click");
   });
