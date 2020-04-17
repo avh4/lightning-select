@@ -14,9 +14,7 @@ Then open `index.html` in your web browser.
 
 **Click a speaker frame** (one of the 8 outside frames) to dim/undim the speaker.  When dimmed, speakers will not be chosen by the random selector.
 
-*Don't forget to play [cool tunes](https://soundcloud.com/groups/chiptunes) while Lightning Select is visible!*
-
-<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/groups/1662&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+*Don't forget to play [cool tunes](https://soundcloud.com/search/sets?q=chiptunes) while Lightning Select is visible!*
 
 
 ## How to create avatar images
